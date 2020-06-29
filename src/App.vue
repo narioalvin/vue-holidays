@@ -1,28 +1,57 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Overview />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Overview from './components/Overview.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Overview
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/font/Poppins-Regular.ttf');
+  src: local('Poppins Regular'), local('Poppins-Regular'),
+    url('./assets/font/Poppins-Regular.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/font/Poppins-Medium.ttf');
+  src: local('Poppins Medium'), local('Poppins-Medium'),
+    url('./assets/font/Poppins-Medium.ttf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/font/Poppins-Bold.ttf');
+  src: local('Poppins Bold'), local('Poppins-Bold'),
+    url('./assets/font/Poppins-Bold.ttf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
