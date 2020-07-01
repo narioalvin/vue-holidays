@@ -141,7 +141,7 @@ export default {
     };
   },
   created() {
-    this.countries = JSON.parse(localStorage.getItem('countries'));
+    this.countries = JSON.parse(localStorage.getItem('countries')) || [];
     this.getData();
     if (this.countries.length < 1) {
       this.getCountries();
