@@ -1,5 +1,8 @@
 # vue-holidays
 
+## Live
+[Click Me](https://narioalvin.github.io/vue-holidays/)
+
 ## Project setup
 ```
 npm install
