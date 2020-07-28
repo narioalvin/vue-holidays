@@ -98,7 +98,9 @@
           </div>
         </div>
       </div>
-      <center><button class="scroll-top" @click="backToTop">Back to top</button></center>
+      <center>
+        <button class="scroll-top" @click="backToTop">^ Back to top</button>
+      </center>
     </div>
   </div>
 </template>
@@ -284,6 +286,7 @@ export default {
 <style lang="scss" scoped>
 .main {
   padding: 15px;
+  background: #f2f2f2;
 
   .top {
     display: flex;
@@ -379,7 +382,7 @@ export default {
           }
 
           .description {
-            background: #f2f4f6;
+            background: #e6e6e6;
             font-size: 14px;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
@@ -421,7 +424,7 @@ button {
 .search-loader {
   display: flex;
   justify-content: center;
-  background: #ffffff;
+  background: #f2f2f2;
   align-items: center;
   text-align: center;
 }
