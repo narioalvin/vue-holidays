@@ -1,4 +1,7 @@
-# vue-holidays
+# Holidays
+
+## Live
+[Click Me](https://narioalvin.github.io/vue-holidays/)
 
 ## Project setup
 ```
