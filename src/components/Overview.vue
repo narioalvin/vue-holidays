@@ -25,19 +25,17 @@
                 v-for="(item, index) in countries"
                 :key="index"
                 :value="item['iso-3166']"
-                >{{ item.country_name }}</option
               >
+                {{ item.country_name }}
+              </option>
             </select>
           </div>
           <div class="select-container language">
             <select v-model="year">
               <option value="" selected data-default>Select Year</option>
-              <option
-                v-for="(item, index) in years"
-                :key="index"
-                :value="item"
-                >{{ item }}</option
-              >
+              <option v-for="(item, index) in years" :key="index" :value="item">
+                {{ item }}
+              </option>
             </select>
             <div class="select-btn">
               <button
@@ -62,7 +60,7 @@
 
       <div class="body" v-else>
         <div class="header">
-          <span><img :src="data.$$flag" alt=""/></span>
+          <span><img :src="data.$$flag" alt="" /></span>
           <h2>{{ data.$$country }} {{ selectedYear }}</h2>
         </div>
         <div
@@ -293,6 +291,9 @@ export default {
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 20px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
 
     .logo {
       color: #f35588;
@@ -382,7 +383,7 @@ export default {
           }
 
           .description {
-            background: #e6e6e6;
+            background: #ffffff;
             font-size: 14px;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
