@@ -60,7 +60,7 @@
 
       <div class="body" v-else>
         <div class="header">
-          <span><img :src="data.$$flag" alt="" /></span>
+          <span><img :src="data.$$flag" alt=""/></span>
           <h2>{{ data.$$country }} {{ selectedYear }}</h2>
         </div>
         <div
@@ -96,9 +96,9 @@
           </div>
         </div>
       </div>
-      <center>
+      <footer>
         <button class="scroll-top" @click="backToTop">^ Back to top</button>
-      </center>
+      </footer>
     </div>
   </div>
 </template>
@@ -119,14 +119,14 @@ export default {
       countryCode: '',
       country: '',
       year: '',
-      selectedYear: '2020',
+      selectedYear: '2021',
       years: [
         '2015',
         '2016',
         '2017',
         '2018',
         '2019',
-        '2020',
+        '2021',
         '2021',
         '2022',
         '2023',
@@ -176,7 +176,7 @@ export default {
             .get(
               this.searching
                 ? `https://calendarific.com/api/v2/holidays?&api_key=${this.calendarKey}&country=${this.countryCode}&year=${this.year}`
-                : `https://calendarific.com/api/v2/holidays?&api_key=${this.calendarKey}&country=${response.data.country_code}&year=2020`
+                : `https://calendarific.com/api/v2/holidays?&api_key=${this.calendarKey}&country=${response.data.country_code}&year=2021`
             )
             .then((res) => {
               res.data.response['$$country'] = this.searching
@@ -231,11 +231,11 @@ export default {
         case 'February':
           return '#ff00c8';
         case 'March':
-          return '#f5e965';
+          return '#ffdd00';
         case 'April':
           return '#ff3e6d';
         case 'May':
-          return '#00faac';
+          return '#00e69d';
         case 'June':
           return '#6b48ff';
         case 'July':
@@ -247,7 +247,7 @@ export default {
         case 'October':
           return '#fc6b3f';
         case 'November':
-          return '#4ef037';
+          return '#54e346';
         case 'December':
           return '#f85959';
         default:
@@ -283,26 +283,32 @@ export default {
 
 <style lang="scss" scoped>
 .main {
-  padding: 15px;
   background: #f2f2f2;
 
   .top {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    background-image: url('../assets/img/holidays-banner.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     margin-bottom: 20px;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 15px;
+    padding: 150px 30px;
+    border-radius: 0;
 
     .logo {
       color: #f35588;
       text-align: center;
+      margin-bottom: 20px;
+
+      h1 {
+        font-size: 48px;
+        color: #ffffff;
+        letter-spacing: 2px;
+      }
     }
 
     .select {
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
       flex-direction: column;
 
       .country {
@@ -326,6 +332,8 @@ export default {
   }
 
   .body {
+    padding: 15px;
+
     .header {
       display: flex;
       align-items: center;
@@ -396,6 +404,13 @@ export default {
         }
       }
     }
+  }
+
+  footer {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -515,6 +530,10 @@ button {
 }
 
 @media (min-width: 400px) {
+  .main .top .logo h1 {
+    font-size: 55px;
+  }
+
   h2 {
     font-size: 30px;
   }
@@ -534,7 +553,7 @@ button {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .main {
     padding: 15px 150px;
   }
@@ -549,6 +568,7 @@ button {
 
 @media (min-width: 992px) {
   .main .top {
+    border-radius: 15px;
     flex-direction: row;
 
     .select {
